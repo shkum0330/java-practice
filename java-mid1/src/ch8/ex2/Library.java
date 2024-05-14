@@ -23,7 +23,7 @@ public class Library {
             System.out.println("도서 제목: "+book[i].title+", 저자: "+book[i].author);
         }
     }
-    class Book{
+    private static class Book{
         private String title,author;
 
         public Book(String title, String author) {
