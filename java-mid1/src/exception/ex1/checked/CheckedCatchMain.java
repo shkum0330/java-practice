@@ -1,9 +1,9 @@
-package ch9.unchecked;
+package exception.ex1.checked;
 
-public class UncheckedThrowMain {
+public class CheckedCatchMain {
     public static void main(String[] args) {
         Service service = new Service();
-        service.callThrow();
+        service.callCatch();
         System.out.println("정상 종료");
     }
 }

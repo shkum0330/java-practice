@@ -1,4 +1,4 @@
-package ch9.checked;
+package exception.ex1.checked;
 
 public class Service {
     Client client=new Client();

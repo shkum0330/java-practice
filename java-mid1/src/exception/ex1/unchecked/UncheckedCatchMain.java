@@ -1,6 +1,6 @@
-package ch9.checked;
+package exception.ex1.unchecked;
 
-public class CheckedCatchMain {
+public class UncheckedCatchMain {
     public static void main(String[] args) {
         Service service = new Service();
         service.callCatch();

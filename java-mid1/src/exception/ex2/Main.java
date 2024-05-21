@@ -1,9 +1,9 @@
-package ch9;
+package exception.ex2;
 
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NetworkClientException {
         NetworkService networkService = new NetworkService();
         Scanner scanner = new Scanner(System.in);
         while (true) {

@@ -1,4 +1,4 @@
-package ch9.unchecked;
+package exception.ex1.unchecked;
 
 
 public class Service {

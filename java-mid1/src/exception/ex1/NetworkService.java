@@ -1,4 +1,4 @@
-package ch9;
+package exception.ex1;
 
 public class NetworkService {
     public void sendMessage(String data) {

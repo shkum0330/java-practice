@@ -1,6 +1,4 @@
-package ch9.unchecked;
-
-import ch9.checked.MyCheckedException;
+package exception.ex1.unchecked;
 
 public class Client {
     public void call() {
