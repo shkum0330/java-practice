@@ -1,4 +1,4 @@
-package map.ex2;
+package map.ex2.cart;
 
 import java.util.Objects;
 
