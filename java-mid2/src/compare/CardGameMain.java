@@ -7,34 +7,21 @@ import java.util.Map;
 
 public class CardGameMain {
     public static void main(String[] args) {
-        // 코드 작성
-        Map<Integer,String> shapeMap=new HashMap<>();
-        shapeMap.put(0,"♠");
-        shapeMap.put(1,"♥");
-        shapeMap.put(2,"\u2666");
-        shapeMap.put(3,"♣");
         ArrayList<Card> cards=new ArrayList<>();
-        for (int i=1;i<=13;i++){
-            cards.add(new Card(i,0));
-        }
-        for (int i=1;i<=13;i++){
-            cards.add(new Card(i,1));
-        }
-        for (int i=1;i<=13;i++){
-            cards.add(new Card(i,2));
-        }
-        for (int i=1;i<=13;i++){
-            cards.add(new Card(i,3));
+        for (int i=1;i<=13;i++) {
+            for (int j = 0; j < 4; j++) {
+                cards.add(new Card(i, j));
+            }
         }
         Collections.shuffle(cards);
 
         ArrayList<Card> player1=new ArrayList<>();
         ArrayList<Card> player2=new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            if(i<=4){
-                player1.add(cards.get(i));
+            if(i%2==0){
+                player1.add(cards.removeFirst());
             }else {
-                player2.add(cards.get(i));
+                player2.add(cards.removeFirst());
             }
         }
         Collections.sort(player1);

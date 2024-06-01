@@ -1,7 +1,8 @@
 package compare;
 
 public class Card implements Comparable<Card>{
-    private Integer num, shapeCode;
+    private final Integer num, shapeCode;
+    private final String[] shape={"♠","♥","\u2666","♣"};
 
     public Card(Integer num, Integer shapeCode) {
         this.num = num;
@@ -25,6 +26,7 @@ public class Card implements Comparable<Card>{
 
     @Override
     public String toString() {
-        return num+"("+ShapeConvertor.convert(shapeCode)+")";
+        return num+"("+shape[shapeCode]+")";
     }
+
 }
