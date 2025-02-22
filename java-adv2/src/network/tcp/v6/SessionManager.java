@@ -3,7 +3,7 @@ package network.tcp.v6;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SessionManagerV6 {
+public class SessionManager {
     private List<SessionV6> sessions=new ArrayList<>();
 
     public synchronized void add(SessionV6 session) {

@@ -1,7 +1,5 @@
 package network.tcp.v6;
 
-import network.tcp.v5.SessionV5;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -13,7 +11,7 @@ public class ServerV6 {
 
     public static void main(String[] args) throws IOException {
         log("서버 시작");
-        SessionManagerV6 sessionManager = new SessionManagerV6();
+        SessionManager sessionManager = new SessionManager();
         ServerSocket serverSocket = new ServerSocket(PORT);
         log("서버 소켓 시작 - 리스닝 포트: " + PORT);
 
@@ -37,9 +35,9 @@ public class ServerV6 {
 
     static class ShutdownHook implements Runnable {
         private final ServerSocket serverSocket;
-        private final SessionManagerV6 sessionManager;
+        private final SessionManager sessionManager;
 
-        public ShutdownHook(ServerSocket serverSocket, SessionManagerV6 sessionManager) {
+        public ShutdownHook(ServerSocket serverSocket, SessionManager sessionManager) {
             this.serverSocket = serverSocket;
             this.sessionManager = sessionManager;
         }
