@@ -10,8 +10,10 @@ import static util.MyLogger.log;
 public class WriteHandler implements Runnable {
 
     private static final String DELIMITER = "|";
+
     private final DataOutputStream output;
     private final Client client;
+
     private boolean closed = false;
 
     public WriteHandler(DataOutputStream output, Client client) {
@@ -51,12 +53,12 @@ public class WriteHandler implements Runnable {
         }
     }
 
-    public static String inputUsername(Scanner sc) {
+    private static String inputUsername(Scanner sc) {
         System.out.println("이름을 입력하세요.");
         String username;
         do{
             username = sc.nextLine();
-        }while (username.isEmpty());
+        } while (username.isEmpty());
 
         return username;
     }

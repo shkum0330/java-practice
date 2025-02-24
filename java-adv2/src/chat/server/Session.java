@@ -12,18 +12,18 @@ public class Session implements Runnable {
     private final Socket socket;
     private final DataInputStream input;
     private final DataOutputStream output;
-    private final SessionManager sessionManager;
     private final CommandManager commandManager;
+    private final SessionManager sessionManager;
 
     private boolean closed = false;
     private String username;
 
-    public Session(Socket socket, SessionManager sessionManager, CommandManager commandManager) throws IOException {
+    public Session(Socket socket, CommandManager commandManager, SessionManager sessionManager) throws IOException {
         this.socket = socket;
         this.input = new DataInputStream(socket.getInputStream());
         this.output = new DataOutputStream(socket.getOutputStream());
-        this.sessionManager = sessionManager;
         this.commandManager = commandManager;
+        this.sessionManager = sessionManager;
         this.sessionManager.add(this);
     }
 
@@ -31,7 +31,7 @@ public class Session implements Runnable {
         return username;
     }
 
-    public void setNickname(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 

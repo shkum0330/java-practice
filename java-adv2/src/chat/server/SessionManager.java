@@ -7,7 +7,7 @@ import java.util.List;
 import static util.MyLogger.log;
 
 public class SessionManager {
-    private List<Session> sessions=new ArrayList<>();
+    private final List<Session> sessions=new ArrayList<>();
 
     public synchronized void add(Session session) {
         sessions.add(session);
@@ -17,7 +17,7 @@ public class SessionManager {
         sessions.remove(session);
     }
 
-    public synchronized void sendAll(String message ) {
+    public synchronized void sendAll(String message) {
         for (Session session : sessions) {
             try {
                 session.send(message);
@@ -48,6 +48,4 @@ public class SessionManager {
     public List<Session> getSessions() {
         return sessions;
     }
-
-
 }

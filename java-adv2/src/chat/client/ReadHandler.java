@@ -9,6 +9,7 @@ public class ReadHandler implements Runnable {
 
     private final DataInputStream input;
     private final Client client;
+
     public boolean closed = false;
 
     public ReadHandler(DataInputStream input, Client client) {

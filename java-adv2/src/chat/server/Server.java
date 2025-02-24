@@ -8,15 +8,15 @@ import static util.MyLogger.log;
 
 public class Server {
     private final int port;
-    private final SessionManager sessionManager;
     private final CommandManager commandManager;
+    private final SessionManager sessionManager;
 
     private ServerSocket serverSocket;
 
-    public Server(int port, SessionManager sessionManager, CommandManager commandManager) {
+    public Server(int port, CommandManager commandManager, SessionManager sessionManager) {
         this.port = port;
-        this.sessionManager = sessionManager;
         this.commandManager = commandManager;
+        this.sessionManager = sessionManager;
     }
 
     public void start() throws IOException {
@@ -30,12 +30,15 @@ public class Server {
 
     private void running() {
         try {
-            Socket socket = serverSocket.accept();
-            log("소켓 연결: " + socket);
+            while (true){
+                Socket socket = serverSocket.accept();
+                log("소켓 연결: " + socket);
 
-            Session session=new Session(socket,sessionManager,commandManager);
-            Thread thread = new Thread(session);
-            thread.start();
+                Session session=new Session(socket,commandManager,sessionManager);
+                Thread thread = new Thread(session);
+                thread.start();
+            }
+
         } catch (IOException e){
             log("서버 소캣 종료: " + e);
         }
